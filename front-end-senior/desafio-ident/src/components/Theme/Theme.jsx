@@ -11,7 +11,11 @@ const colors = {
 
 const theme = createMuiTheme({
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+    fontFamily: [
+      '"Open Sans"',
+      'Roboto'
+    ].join(','),
   }
 });
 
