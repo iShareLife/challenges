@@ -2,6 +2,8 @@ import {
   getToken
 } from 'utils'
 
+const CHANNEL_ID = 'UCwJjQBn1dMEWjMUWNcp6Fxw';
+
 class IDentClient {
   onError = error => {}
 
