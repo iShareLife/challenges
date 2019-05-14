@@ -11,7 +11,6 @@ import { PrivateRoute } from 'components'
 import App from 'App'
 
 const customHistory = createBrowserHistory()
-customHistory.listen(() => window.tracker.pageView())
 
 ReactDOM.render(
   <Router history={customHistory}>
