@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        HOME SIMPSON
+      <div style={{ height: '100%', width: '100%'}}>
+      SEI LA
       </div>
     )
   }
