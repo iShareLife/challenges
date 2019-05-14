@@ -16,7 +16,13 @@ const theme = createMuiTheme({
       '"Open Sans"',
       'Roboto'
     ].join(','),
-  }
+  },
+  palette: {
+    primary: {
+      main:  '#8c388c'
+    }
+    // error: will use the default color
+  },
 });
 
 const styles = theme => ({

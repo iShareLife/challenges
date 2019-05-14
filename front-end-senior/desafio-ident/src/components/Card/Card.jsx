@@ -29,6 +29,7 @@ const styles = theme => ({
       }
     },
     active: {},
+    hover:{},
     icon: {
       fontSize: 35
     },
@@ -48,18 +49,11 @@ const styles = theme => ({
         top: -25
     }
 });
-const teste = {
+const inlineFab = {
   top: -29,
   margin: '0 auto',
   color: '#8c388c',
-  backgroundColor: '#ffffff',
-  border: '3px solid #EAEBED',
-  '&$active': {
-    boxShadow: 'none'
-  },
-  '&$hover': {
-    backgroundColor: '#f3f3f3'
-  }
+  border: '3px solid #EAEBED'
 }
 
 function DCard(props){
@@ -72,8 +66,8 @@ function DCard(props){
             image={props.img}
             title="Image title"
           />
-          <Fab color="primary" aria-label="Add" style={teste}>
-            <PlayArrowRounded className={classes.icon} />
+          <Fab aria-label="Add" style={inlineFab}>
+            <PlayArrowRounded color="primary" className={classes.icon} />
           </Fab>
           <CardContent className={classes.cardContent}>
             <Typography className={classes.title} align="center">
