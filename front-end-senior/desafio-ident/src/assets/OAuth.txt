@@ -1,8 +1,0 @@
-Este é seu ID do cliente
-
-86210198525-8a23vgb49r2f9ptqg4hrok2v91s15f3u.apps.googleusercontent.com
-
-
-Esta é sua chave secreta do cliente
-
-f1n2GSYilRVCndGiuzrvTvzi
