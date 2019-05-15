@@ -1,5 +1,5 @@
 import React from "react";
-import VisibilitySharp from "@material-ui/icons/VisibilitySharp";
+import ThumbUp from "@material-ui/icons/ThumbUp";
 import PropTypes from "prop-types";
 
 const styles = {
@@ -21,10 +21,10 @@ const styles = {
   }
 };
 
-function ViewsCount(props) {
+function UpVote(props) {
   return (
     <div style={styles.container}>
-      <VisibilitySharp
+      <ThumbUp
         style={{ ...styles.base, ...styles.icon }}
       />
       <div style={{ ...styles.base, ...styles.count }}>{props.count}</div>
@@ -32,8 +32,8 @@ function ViewsCount(props) {
   );
 }
 
-ViewsCount.propTypes = {
+UpVote.propTypes = {
   count: PropTypes.string.isRequired
 };
 
-export default ViewsCount;
+export default UpVote;

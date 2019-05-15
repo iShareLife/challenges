@@ -1,5 +1,5 @@
 import React from "react";
-import VisibilitySharp from "@material-ui/icons/VisibilitySharp";
+import WatchLater from "@material-ui/icons/WatchLater";
 import PropTypes from "prop-types";
 
 const styles = {
@@ -21,19 +21,17 @@ const styles = {
   }
 };
 
-function ViewsCount(props) {
+function Clock(props) {
   return (
     <div style={styles.container}>
-      <VisibilitySharp
-        style={{ ...styles.base, ...styles.icon }}
-      />
-      <div style={{ ...styles.base, ...styles.count }}>{props.count}</div>
+      <WatchLater style={{ ...styles.base, ...styles.icon }} />
+      <div style={{ ...styles.base, ...styles.count }}>{props.time}</div>
     </div>
   );
 }
 
-ViewsCount.propTypes = {
-  count: PropTypes.string.isRequired
+Clock.propTypes = {
+  time: PropTypes.string.isRequired
 };
 
-export default ViewsCount;
+export default Clock;

@@ -3,7 +3,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import PropTypes from "prop-types";
-import { FabPlay, ViewsCount, UpVote, DownVote, Clock, ButtonBasic } from "components";
+import { FabPlay, ViewsCount, UpVote, DownVote, Clock } from "components";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -16,7 +16,7 @@ const styles = theme => ({
   card: {
     height: "100%",
     display: "flex",
-    width: 340,
+    width: 320,
     flexDirection: "column"
   },
   cardMedia: {
@@ -26,15 +26,11 @@ const styles = theme => ({
     flexGrow: 1,
     position: "relative",
     padding: "10px 15px",
-    top: -25,
-    "&:last-child": {
-      paddingBottom: 0
-    }
+    top: -25
   },
   iconsContainer: {
     display: "flex",
-    margin: "20px 5px 0px 5px",
-    justifyContent: "space-between"
+    margin: "20px auto 0px auto"
   }
 });
 
@@ -54,12 +50,11 @@ function DCard(props){
               {props.title}
             </Typography>
             <div className={classes.iconsContainer}>
-              <ViewsCount count="1.280" />
-              <Clock time="1h 19min" />
-              <UpVote count="225" />
-              <DownVote count="12" />
+              <ViewsCount count="2" />
+              <Clock time="5" />
+              <UpVote count="3" />
+              <DownVote count="1" />
             </div>
-            <ButtonBasic>Assista agora</ButtonBasic>
           </CardContent>
         </Card>
       </div>
