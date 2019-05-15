@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core";
 import MultiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
 
-
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
