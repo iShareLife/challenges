@@ -23,7 +23,7 @@ const styles = {
 
 function DownVote(props) {
   return (
-    <div style={styles.container}>
+    <div style={{...styles.container, ...props.styleProps}}>
       <ThumbDown style={{ ...styles.base, ...styles.icon }} />
       <div style={{ ...styles.base, ...styles.count }}>{props.count}</div>
     </div>

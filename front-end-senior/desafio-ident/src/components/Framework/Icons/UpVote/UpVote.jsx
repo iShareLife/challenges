@@ -23,7 +23,7 @@ const styles = {
 
 function UpVote(props) {
   return (
-    <div style={styles.container}>
+    <div style={{...styles.container, ...props.styleProps}}>
       <ThumbUp
         style={{ ...styles.base, ...styles.icon }}
       />

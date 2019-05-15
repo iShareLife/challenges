@@ -11,7 +11,9 @@ const styles = {
     color: "#999999"
   },
   icon: {
-    fontSize: 14
+    fontSize: 14,
+    top: 1,
+    position: 'relative'
   },
   count: {
     fontSize: 12,
@@ -23,7 +25,7 @@ const styles = {
 
 function Clock(props) {
   return (
-    <div style={styles.container}>
+    <div style={{...styles.container, ...props.styleProps}}>
       <WatchLater style={{ ...styles.base, ...styles.icon }} />
       <div style={{ ...styles.base, ...styles.count }}>{props.time}</div>
     </div>

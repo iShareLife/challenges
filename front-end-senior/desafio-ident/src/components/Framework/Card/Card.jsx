@@ -16,7 +16,8 @@ const styles = theme => ({
   card: {
     height: "100%",
     display: "flex",
-    width: 340,
+    width: 310,
+    margin: "auto",
     flexDirection: "column"
   },
   cardMedia: {
@@ -39,7 +40,7 @@ const styles = theme => ({
 });
 
 function DCard(props){
-    const { classes } = props;
+    const { classes, children } = props;
     return (
       <div>
         <Card className={classes.card}>
@@ -53,12 +54,14 @@ function DCard(props){
             <Typography className={classes.title} align="center">
               {props.title}
             </Typography>
-            <div className={classes.iconsContainer}>
+
+              {children}
+           {/* <div className={classes.iconsContainer}>
               <ViewsCount count="1.280" />
               <Clock time="1h 19min" />
               <UpVote count="225" />
               <DownVote count="12" />
-            </div>
+    </div>*/}
             <ButtonBasic>Assista agora</ButtonBasic>
           </CardContent>
         </Card>
