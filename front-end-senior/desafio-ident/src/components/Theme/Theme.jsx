@@ -4,25 +4,12 @@ import { withStyles } from "@material-ui/core";
 import MultiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
 
-const colors = {
-  defaultColor: "#2962ff",
-  secondaryColor: "#90d528"
-};
 
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
-    fontFamily: [
-      '"Open Sans"',
-      'Roboto'
-    ].join(','),
-  },
-  palette: {
-    primary: {
-      main:  '#8c388c'
-    }
-    // error: will use the default color
-  },
+    fontFamily: ['"Open Sans"', "Roboto"].join(",")
+  }
 });
 
 const styles = theme => ({
@@ -35,7 +22,7 @@ const Container = props => {
 
   return (
     <MultiThemeProvider theme={theme}>
-      <section className={classes.sectionContainer}>{props.children}</section>
+      <div className={classes.sectionContainer}>{props.children}</div>
     </MultiThemeProvider>
   );
 };
