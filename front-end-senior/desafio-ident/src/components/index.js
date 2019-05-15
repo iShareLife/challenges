@@ -1,3 +1,5 @@
 export { default as PrivateRoute } from './PrivateRoute'
 export { default as Theme } from './Theme'
-export { default as Card } from './Card'
+export { default as Card } from './Framework/Card'
+export { default as FabPlay } from './Framework/Icons/FabPlay'
+export { default as ViewsCount } from './Framework/Icons/ViewsCount'
