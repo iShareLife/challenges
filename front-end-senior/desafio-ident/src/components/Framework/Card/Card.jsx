@@ -54,14 +54,7 @@ function DCard(props){
             <Typography className={classes.title} align="center">
               {props.title}
             </Typography>
-
               {children}
-           {/* <div className={classes.iconsContainer}>
-              <ViewsCount count="1.280" />
-              <Clock time="1h 19min" />
-              <UpVote count="225" />
-              <DownVote count="12" />
-    </div>*/}
             <ButtonBasic>Assista agora</ButtonBasic>
           </CardContent>
         </Card>

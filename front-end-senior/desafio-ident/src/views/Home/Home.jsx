@@ -36,7 +36,7 @@ const styles = theme => ({
         <div className={classes.panel}>
           <Panel title="Implantodontia">
             <Grid container  className={classes.root} spacing={16}>
-              {[1,2,3,4,5,6].map((e) =>
+              {[1,2,3,4,5,6,7,8].map((e) =>
                 <Grid key={e} item xs={12} md={6} lg={3}>
                   <CarouselCard img={imageFile}/>
                 </Grid>

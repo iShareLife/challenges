@@ -11,13 +11,15 @@ const styles = {
     color: "#999999"
   },
   icon: {
-    fontSize: 14
+    fontSize: 14,
+    top: 2,
+    position: 'relative'
   },
   count: {
     fontSize: 12,
     fontFamily: "'Open Sans', sans-serif",
-    marginLeft: 5,
-    display: 'inline-block'
+    display: 'inline-block',
+    marginLeft: 3
   }
 };
 

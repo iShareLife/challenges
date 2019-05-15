@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { ViewsCount, Clock, Card } from "components";
+import { ViewsCount, Clock, Card, UpVote, DownVote } from "components";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -38,8 +38,10 @@ function CarouselCard(props){
       <div>
         <Card title="Nanotecnologia Aplicada a Implantodontia" img={props.img}>
             <div className={classes.iconsContainer}>
-              <ViewsCount count="2" />
-              <Clock styleProps={{marginLeft: 15}} time="5" />
+              <ViewsCount styleProps={{margin: '0 5px'}}  count="1.280" />
+              <Clock styleProps={{margin: '0 5px'}} time="1h 19min" />
+              <UpVote styleProps={{margin: '0 5px'}}  count="225" />
+              <DownVote styleProps={{margin: '0 5px'}}  count="12" />
             </div>
         </Card>
       </div>
