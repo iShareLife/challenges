@@ -16,47 +16,66 @@ const styles = theme => ({
     marginBottom: 40
   }
 });
+
+const Lançamentos = props => {
+  const { classes, items } = props;
+  return (
+    <div className={classes.panel}>
+      <Panel title="Lançamentos" showLogo={true}>
+        <Grid container className={classes.root} spacing={16}>
+          {items.map(e => (
+            <Grid key={e} item xs={12} md={6} lg={3}>
+              <CarouselCard img={imageFile} />
+            </Grid>
+          ))}
+        </Grid>
+      </Panel>
+    </div>
+  );
+}
+
+const Implantodontia = props => {
+  const { classes, items } = props;
+  return (
+    <div className={classes.panel}>
+      <Panel title="Implantodontia" subtitle="6 cursos">
+        <Grid container className={classes.root} spacing={16}>
+          {items.map(e => (
+            <Grid key={e} item xs={12} md={6} lg={3}>
+              <CarouselCard img={imageFile} />
+            </Grid>
+          ))}
+        </Grid>
+      </Panel>
+    </div>
+  );
+};
+
+const Periodontia = props => {
+  const { classes, items } = props;
+  return (
+    <div className={classes.panel}>
+      <Panel title="Periodontia" subtitle="3 cursos">
+        <Grid container className={classes.root} spacing={16}>
+          {items.map(e => (
+            <Grid key={e} item xs={12} md={6} lg={3}>
+              <CarouselCard img={imageFile} />
+            </Grid>
+          ))}
+        </Grid>
+      </Panel>
+    </div>
+  );
+};
+
  class Home extends Component {
   render() {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <div className={classes.panel}>
-          <Panel title="Lançamentos" showLogo={true} >
-            <Grid container className={classes.root} spacing={16}>
-              {[1,2,3,4].map((e) =>
-                <Grid key={e} item xs={12} md={6} lg={3}>
-                  <CarouselCard img={imageFile}/>
-                </Grid>
-              )
-              }
-            </Grid>
-          </Panel>
-        </div>
-        <div className={classes.panel}>
-          <Panel title="Implantodontia">
-            <Grid container  className={classes.root} spacing={16}>
-              {[1,2,3,4,5,6,7,8].map((e) =>
-                <Grid key={e} item xs={12} md={6} lg={3}>
-                  <CarouselCard img={imageFile}/>
-                </Grid>
-              )
-              }
-            </Grid>
-          </Panel>
-        </div>
-         <div className={classes.panel}>
-          <Panel title="Periodontia">
-            <Grid container  className={classes.root} spacing={16}>
-              {[1,2,3].map((e) =>
-                <Grid key={e} item xs={12} md={6} lg={3}>
-                  <CarouselCard img={imageFile}/>
-                </Grid>
-              )
-              }
-            </Grid>
-          </Panel>
-        </div>
+        <Lançamentos classes={classes} items={[1, 2, 3, 4]} />
+        <Implantodontia classes={classes} items={[1, 2, 3, 4, 5, 6, 7, 8]} />
+        <Periodontia classes={classes} items={[1, 2, 3]} />
       </React.Fragment>
     )
   }
