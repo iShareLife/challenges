@@ -25,12 +25,12 @@ const Loading = () => {
 };
 
 const Lançamentos = props => {
-  const { classes, items } = props;
+  const { classes, items, isLoading } = props;
   return (
     <div className={classes.panel}>
       <Panel title="Lançamentos" showLogo={true}>
         <Grid container className={classes.root} spacing={16}>
-          {items.length === 0 ? (
+          {isLoading ? (
             <Loading />
           ) : (
             items.map(e => (
@@ -46,12 +46,12 @@ const Lançamentos = props => {
 };
 
 const Implantodontia = props => {
-  const { classes, items } = props;
+  const { classes, items, isLoading } = props;
   return (
     <div className={classes.panel}>
       <Panel title="Implantodontia" subtitle="6 cursos">
         <Grid container className={classes.root} spacing={16}>
-          {items.length === 0 ? (
+          {isLoading ? (
             <Loading />
           ) : (
             items.map(e => (
@@ -67,12 +67,12 @@ const Implantodontia = props => {
 };
 
 const Periodontia = props => {
-  const { classes, items } = props;
+  const { classes, items, isLoading } = props;
   return (
     <div className={classes.panel}>
       <Panel title="Periodontia" subtitle="3 cursos">
         <Grid container className={classes.root} spacing={16}>
-          {items.length === 0 ? (
+          {isLoading ? (
             <Loading />
           ) : (
             items.map(e => (
@@ -89,17 +89,26 @@ const Periodontia = props => {
 
 class Home extends Component {
   state = {
-    lancamentos: [],
-    periodontia: [],
-    implantodontia: []
+    lancamentos: {
+      loading: false,
+      items: []
+    },
+    periodontia: {
+      loading: false,
+      items: []
+    },
+    implantodontia: {
+      loading: false,
+      items: []
+    }
   };
   render() {
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <Lançamentos classes={classes} items={[1, 2, 3, 4]} />
-        <Implantodontia classes={classes} items={[1, 2, 3, 4, 5, 6, 7, 8]} />
-        <Periodontia classes={classes} items={[]} />
+        <Lançamentos classes={classes} items={[1, 2, 3, 4]} is-loading={false}/>
+        <Implantodontia classes={classes} items={[1, 2, 3, 4, 5, 6, 7, 8]} is-loading={true}/>
+        <Periodontia classes={classes} items={[]} is-loading={false}/>
       </React.Fragment>
     );
   }
