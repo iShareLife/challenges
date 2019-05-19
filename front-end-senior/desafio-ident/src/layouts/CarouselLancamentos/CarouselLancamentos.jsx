@@ -30,11 +30,12 @@ const Loading = () => {
 
 const GridLayout = props => {
   const { classes, isLoading, title, children, subtitle, showLogo,items } = props;
+  const xl = useMediaQuery("(max-width:1600px)");
 
   return (
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
-        <Grid container className={classes.root} spacing={16}>
+        <Grid container className={classes.root} spacing={xl?16:24}>
           {isLoading ? (
             <Loading />
           ) : (

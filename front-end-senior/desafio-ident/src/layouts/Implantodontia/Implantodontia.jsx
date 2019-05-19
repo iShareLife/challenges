@@ -30,12 +30,12 @@ const Loading = () => {
 
 const GridLayout = props => {
   const { classes, isLoading, title, children, subtitle, showLogo, items } = props;
-  const xl = useMediaQuery("(max-width:1000px)");
+  const xl = useMediaQuery("(max-width:1600px)");
 
   return (
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
-        <Grid container className={classes.root} spacing={xl ? 16 : 24}>
+        <Grid container className={classes.root} spacing={xl?16 : 24}>
           {isLoading ? (
             <Loading />
           ) : (
@@ -57,7 +57,7 @@ const Implantodontia = props => {
   const { classes, items, isLoading, cursos, imageFile } = props;
   return (
     <GridLayout
-      title="Lançamentos"
+      title="Implantodontia"
       subtitle={`${cursos} cursos`}
       classes={classes}
       isLoading={isLoading}
