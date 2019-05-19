@@ -17,70 +17,77 @@ const styles = theme => ({
 });
 
 const Loading = () => {
-  return [1, 2, 3, 4].map(e => (
-    <Grid key={e} item xs={12} md={6} lg={3}>
+  return Array(4).fill(4).map((e,i) => (
+    <Grid key={i} item xs={12} md={6} lg={3}>
       <ContentLoading />
     </Grid>
   ));
 };
 
-const Lançamentos = props => {
-  const { classes, items, isLoading } = props;
+const Lancamentos = props => {
+  const { classes, items, isLoading, cursos} = props;
   return (
-    <div className={classes.panel}>
-      <Panel title="Lançamentos" showLogo={true}>
-        <Grid container className={classes.root} spacing={16}>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            items.map(e => (
-              <Grid key={e} item xs={12} md={6} lg={3}>
-                <CarouselCard img={imageFile} />
-              </Grid>
-            ))
-          )}
+    <GridLayout
+      title="Lançamentos"
+      subtitle={`${cursos} cursos`}
+      classes={classes}
+      isLoading={isLoading}
+      showLogo={true}
+    >
+      {items.map(e => (
+        <Grid key={e} item xs={12} md={6} lg={3}>
+          <CarouselCard img={imageFile} />
         </Grid>
-      </Panel>
-    </div>
+      ))}
+    </GridLayout>
   );
 };
 
 const Implantodontia = props => {
-  const { classes, items, isLoading } = props;
+  const { classes, items, isLoading, cursos } = props;
   return (
-    <div className={classes.panel}>
-      <Panel title="Implantodontia" subtitle="6 cursos">
-        <Grid container className={classes.root} spacing={16}>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            items.map(e => (
-              <Grid key={e} item xs={12} md={6} lg={3}>
-                <CarouselCard img={imageFile} />
-              </Grid>
-            ))
-          )}
+    <GridLayout
+      title="Implantodontia"
+      subtitle={`${cursos} cursos`}
+      classes={classes}
+      isLoading={isLoading}
+      showLogo={false}
+    >
+      {items.map(e => (
+        <Grid key={e} item xs={12} md={6} lg={3}>
+          <CarouselCard img={imageFile} />
         </Grid>
-      </Panel>
-    </div>
+      ))}
+    </GridLayout>
   );
 };
 
 const Periodontia = props => {
-  const { classes, items, isLoading } = props;
+  const { classes, items, isLoading, cursos } = props;
+  return (
+    <GridLayout
+      title="Periodontia"
+      subtitle={`${cursos} cursos`}
+      classes={classes}
+      isLoading={isLoading}
+      showLogo={false}
+    >
+      {items.map(e => (
+        <Grid key={e} item xs={12} md={6} lg={3}>
+          <CarouselCard img={imageFile} />
+        </Grid>
+      ))}
+    </GridLayout>
+  );
+};
+
+const GridLayout = props => {
+  const { classes, isLoading, title, subtitle, children, showLogo } = props;
   return (
     <div className={classes.panel}>
-      <Panel title="Periodontia" subtitle="3 cursos">
+      <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
         <Grid container className={classes.root} spacing={16}>
-          {isLoading ? (
-            <Loading />
-          ) : (
-            items.map(e => (
-              <Grid key={e} item xs={12} md={6} lg={3}>
-                <CarouselCard img={imageFile} />
-              </Grid>
-            ))
-          )}
+          {isLoading ? <Loading /> : <>{children}</>}
         </Grid>
       </Panel>
     </div>
@@ -91,24 +98,44 @@ class Home extends Component {
   state = {
     lancamentos: {
       loading: false,
-      items: []
+      cursos: 0,
+      items: [1, 2, 3, 4]
     },
     periodontia: {
       loading: false,
-      items: []
+      items: [1, 2, 3, 4, 5, 6, 7],
+      cursos: 29
     },
     implantodontia: {
-      loading: false,
-      items: []
+      loading: true,
+      items: [],
+      cursos: 999
     }
   };
+
   render() {
+    const { lancamentos, periodontia, implantodontia } = this.state;
     const { classes } = this.props;
     return (
       <React.Fragment>
-        <Lançamentos classes={classes} items={[1, 2, 3, 4]} is-loading={false}/>
-        <Implantodontia classes={classes} items={[1, 2, 3, 4, 5, 6, 7, 8]} is-loading={true}/>
-        <Periodontia classes={classes} items={[]} is-loading={false}/>
+        <Lancamentos
+          classes={classes}
+          items={lancamentos.items}
+          isLoading={lancamentos.loading}
+          cursos={lancamentos.cursos}
+        />
+        <Implantodontia
+          classes={classes}
+          items={implantodontia.items}
+          isLoading={implantodontia.loading}
+          cursos={implantodontia.cursos}
+        />
+        <Periodontia
+          classes={classes}
+          items={periodontia.items}
+          isLoading={periodontia.loading}
+          cursos={periodontia.cursos}
+        />
       </React.Fragment>
     );
   }
