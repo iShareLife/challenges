@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Panel, CarouselCard, ContentLoading } from "components";
 import imageFile from "../../assets/img1.png";
 import Grid from "@material-ui/core/Grid";
@@ -94,28 +94,24 @@ const GridLayout = props => {
   );
 };
 
-class Home extends Component {
-  state = {
-    lancamentos: {
-      loading: false,
-      cursos: 0,
-      items: [1, 2, 3, 4]
-    },
-    periodontia: {
-      loading: false,
-      items: [1, 2, 3, 4, 5, 6, 7],
-      cursos: 29
-    },
-    implantodontia: {
-      loading: true,
-      items: [],
-      cursos: 999
-    }
-  };
+function Home(props) {
+  const [lancamentos, setLancamentos] = useState({
+    loading: false,
+    cursos: 0,
+    items: []
+  });
+  const [periodontia, setPeriodontia] = useState({
+    loading: false,
+    cursos: 0,
+    items: []
+  });
+  const [implantodontia, setImplantodontia] = useState({
+    loading: false,
+    cursos: 0,
+    items: []
+  });
 
-  render() {
-    const { lancamentos, periodontia, implantodontia } = this.state;
-    const { classes } = this.props;
+  const { classes } = props;
     return (
       <React.Fragment>
         <Lancamentos
@@ -138,7 +134,6 @@ class Home extends Component {
         />
       </React.Fragment>
     );
-  }
 }
 
 export default withStyles(styles)(Home);
