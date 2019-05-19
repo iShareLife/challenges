@@ -1,11 +1,8 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import PropTypes from "prop-types";
-import { FabPlay, ViewsCount, UpVote, DownVote, Clock } from "components";
-import Typography from "@material-ui/core/Typography";
+import { ViewsCount, Clock, Card, UpVote, DownVote } from "components";
 import { withStyles } from "@material-ui/core/styles";
+import ButtonBasic from "../Framework/ButtonBasic";
 
 const styles = theme => ({
   title: {
@@ -16,7 +13,7 @@ const styles = theme => ({
   card: {
     height: "100%",
     display: "flex",
-    width: 350,
+    width: 320,
     flexDirection: "column"
   },
   cardMedia: {
@@ -30,40 +27,30 @@ const styles = theme => ({
   },
   iconsContainer: {
     display: "flex",
-    margin: "20px auto 0px auto"
+    margin: "20px 5px 0px 5px",
+    justifyContent: "center"
   }
 });
 
-function DCard(props){
-    const { classes } = props;
-    return (
-      <div>
-        <Card className={classes.card}>
-          <CardMedia
-            className={classes.cardMedia}
-            image={props.img}
-            title="Image title"
-          />
-          <FabPlay />
-          <CardContent className={classes.cardContent}>
-            <Typography className={classes.title} align="center">
-              {props.title}
-            </Typography>
-            <div className={classes.iconsContainer}>
-              <ViewsCount count="2" />
-              <Clock time="5" />
-              <UpVote count="3" />
-              <DownVote count="1" />
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    );
+function PageCard(props) {
+  const { classes } = props;
+  return (
+    <div>
+      <Card title="Nanotecnologia Aplicada a Implantodontia" img={props.img}>
+        <div className={classes.iconsContainer}>
+          <ViewsCount styleProps={{ margin: '0 5px' }} count="1.280" />
+          <Clock styleProps={{ margin: '0 5px' }} time="1h 19min" />
+          <UpVote styleProps={{ margin: '0 5px' }} count="225" />
+          <DownVote styleProps={{ margin: '0 5px' }} count="12" />
+        </div>
+        <ButtonBasic>Assista agora</ButtonBasic>
+      </Card>
+    </div>
+  );
 }
 
-DCard.propTypes = {
-    classes: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired
+PageCard.propTypes = {
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(DCard);
+export default withStyles(styles)(PageCard);

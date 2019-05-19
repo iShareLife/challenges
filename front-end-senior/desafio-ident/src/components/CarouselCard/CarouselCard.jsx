@@ -39,8 +39,6 @@ function CarouselCard(props){
             <div className={classes.iconsContainer}>
               <ViewsCount styleProps={{margin: '0 5px'}}  count="1.280" />
               <Clock styleProps={{margin: '0 5px'}} time="1h 19min" />
-              <UpVote styleProps={{margin: '0 5px'}}  count="225" />
-              <DownVote styleProps={{margin: '0 5px'}}  count="12" />
             </div>
         </Card>
       </div>

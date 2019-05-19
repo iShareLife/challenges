@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Panel, CarouselCard, ContentLoading } from "components";
+import { CarouselLancamentos, Implantodontia } from "layouts";
 import imageFile from "../../assets/img1.png";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
@@ -24,26 +25,7 @@ const Loading = () => {
   ));
 };
 
-const Lancamentos = props => {
-  const { classes, items, isLoading, cursos} = props;
-  return (
-    <GridLayout
-      title="Lançamentos"
-      subtitle={`${cursos} cursos`}
-      classes={classes}
-      isLoading={isLoading}
-      showLogo={true}
-    >
-      {items.map(e => (
-        <Grid key={e} item xs={12} md={6} lg={3}>
-          <CarouselCard img={imageFile} />
-        </Grid>
-      ))}
-    </GridLayout>
-  );
-};
-
-const Implantodontia = props => {
+/*const Implantodontia = props => {
   const { classes, items, isLoading, cursos } = props;
   return (
     <GridLayout
@@ -60,7 +42,7 @@ const Implantodontia = props => {
       ))}
     </GridLayout>
   );
-};
+};*/
 
 const Periodontia = props => {
   const { classes, items, isLoading, cursos } = props;
@@ -98,23 +80,23 @@ function Home(props) {
   const [lancamentos, setLancamentos] = useState({
     loading: false,
     cursos: 0,
-    items: []
+    items: [1,2,3,4]
   });
   const [periodontia, setPeriodontia] = useState({
-    loading: false,
+    loading: true,
     cursos: 0,
     items: []
   });
   const [implantodontia, setImplantodontia] = useState({
     loading: false,
     cursos: 0,
-    items: []
+    items: [1,2,3,4]
   });
 
   const { classes } = props;
     return (
       <React.Fragment>
-        <Lancamentos
+        <CarouselLancamentos
           classes={classes}
           items={lancamentos.items}
           isLoading={lancamentos.loading}
