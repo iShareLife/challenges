@@ -39,17 +39,6 @@ const GridLayout = props => {
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
         <Grid container className={classes.root} spacing={xl ? 16 : 24}>
-          {/*isLoading ? (
-            <Loading />
-          ) : (
-            <>
-              {items.map(e => (
-                <Grid key={e} item xs={12} md={6} lg={3}>
-                  {children}
-                </Grid>
-              ))}
-            </>
-          )*/}
           {isLoading ? (
             <Loading />
           ) : (
