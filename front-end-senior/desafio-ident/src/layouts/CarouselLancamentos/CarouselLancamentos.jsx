@@ -50,6 +50,9 @@ const GridLayout = props => {
               ))}
             </>
           )*/}
+          {isLoading ? (
+            <Loading />
+          ) : (
           <Carousel
             arrows
             autoPlaySpeed={3000}
@@ -84,10 +87,8 @@ const GridLayout = props => {
               }
             }}
           >
-            {items.map(e => (
-              <div>{children}</div>
-            ))}
-          </Carousel>
+            {items.map(e => ( <div>{children}</div>))}
+          </Carousel>)}
         </Grid>
       </Panel>
     </div>

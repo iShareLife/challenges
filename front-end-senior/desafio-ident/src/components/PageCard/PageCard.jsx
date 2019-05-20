@@ -36,7 +36,7 @@ function PageCard(props) {
   const { classes } = props;
   return (
     <div>
-      <Card title="Nanotecnologia Aplicada a Implantodontia" img={props.img}>
+      <Card title="Nanotecnologia Aplicada a Implantodontia" img={props.img} styleProps={{ maxWidth: 320, margin: "0 auto" }}>
         <div className={classes.iconsContainer}>
           <ViewsCount styleProps={{ margin: '0 5px' }} count="1.280" />
           <Clock styleProps={{ margin: '0 5px' }} time="1h 19min" />
