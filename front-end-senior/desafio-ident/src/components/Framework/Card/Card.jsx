@@ -38,10 +38,10 @@ const styles = theme => ({
 });
 
 function DCard(props){
-    const { classes, children } = props;
+    const { classes, children, styleProps } = props;
     return (
       <div>
-        <Card className={classes.card}>
+        <Card className={classes.card} style={styleProps}>
           <CardMedia
             className={classes.cardMedia}
             image={props.img}

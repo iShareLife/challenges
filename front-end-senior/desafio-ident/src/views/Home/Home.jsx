@@ -18,7 +18,7 @@ function Home(props) {
   const [lancamentos, setLancamentos] = useState({
     loading: false,
     cursos: 0,
-    items: [1,2,3]
+    items: [1,2,3,4,5,6,7,8]
   });
   const [periodontia, setPeriodontia] = useState({
     loading: true,
@@ -35,19 +35,16 @@ function Home(props) {
     return (
       <React.Fragment>
         <CarouselLancamentos
-          classes={classes}
           items={lancamentos.items}
           isLoading={lancamentos.loading}
           cursos={lancamentos.cursos}
         />
         <Implantodontia
-          classes={classes}
           items={implantodontia.items}
           isLoading={implantodontia.loading}
           cursos={implantodontia.cursos}
         />
         <Periodontia
-          classes={classes}
           items={periodontia.items}
           isLoading={periodontia.loading}
           cursos={periodontia.cursos}
