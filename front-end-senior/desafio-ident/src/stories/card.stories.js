@@ -9,7 +9,7 @@ storiesOf("Cards", module)
   .add("Card basic", () => (
     <Card img={imageFile} title="Nanotecnologia Aplicada a Implantodontia">
       <div
-        className={{
+        style={{
           display: "flex",
           margin: "20px 5px 0px 5px",
           justifyContent: "space-between"
