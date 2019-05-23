@@ -1,0 +1,15 @@
+html {
+    background-color: #EAEBED !important;
+}
+@media (min-width: 600px) {
+    body {
+        padding: 2%;
+        background-color: #EAEBED !important;
+    }
+}
+@media (min-width: 1600px) {
+    body {
+        padding: 2% 4%;
+        background-color: #EAEBED !important;
+    }
+}
