@@ -8,29 +8,29 @@ function Home(props) {
   const [lancamentos, setLancamentos] = useState({
     loading: false,
     cursos: 0,
-    items: []
+    items: [1,2,3,4,5,6,7]
   });
   const [periodontia, setPeriodontia] = useState({
     loading: false,
-    cursos: 0,
-    items: []
+    cursos: 25,
+    items: [1,2,3,4,5,6]
   });
   const [implantodontia, setImplantodontia] = useState({
-    loading: false,
-    cursos: 0,
+    loading: true,
+    cursos: 10,
     items: []
   });
 
-  useEffect(() => {
+  /*useEffect(() => {
     fetchImplantodontia();
   }, [])
 
   async function fetchImplantodontia() {
-    setImplantodontia({items:[],cursos: 0, loading: true});
+    setImplantodontia({items:[],cursos: 0, loading: false});
     const videosResponse = await client.getVideosImplantodontia();
-    setImplantodontia({ items: parseResponse(videosResponse.items), cursos: videosResponse.items.lenght, loading: false });
+    //setImplantodontia({ items: parseResponse(videosResponse.items), cursos: videosResponse.items.lenght, loading: false });
     console.log("Videos Implantodontia: ", videosResponse);
-  };
+  };*/
 
   function parseResponse(item) {
     return item.map(e=>{

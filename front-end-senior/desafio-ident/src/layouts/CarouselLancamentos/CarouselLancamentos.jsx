@@ -39,7 +39,7 @@ const GridLayout = props => {
   return (
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
-        {items.lenght > 0?<Grid container className={classes.root} spacing={xl ? 16 : 24}>
+        {items.length > 0?<Grid container className={classes.root} spacing={xl ? 16 : 24}>
           {isLoading ? (
             <Loading />
           ) : (
