@@ -8,8 +8,9 @@ import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMe
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Carousel.css"
+import Typography from '@material-ui/core/Typography';
 
-const styles = theme => ({
+ const styles = theme => ({
   root: {
     flexGrow: 1
   },
@@ -32,13 +33,13 @@ const Loading = () => {
 };
 
 const GridLayout = props => {
-  const { classes, isLoading, title, children, subtitle, showLogo,items } = props;
+  const { classes, isLoading, title, children, subtitle, showLogo, items } = props;
   const xl = useMediaQuery("(max-width:1600px)");
 
   return (
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
-        <Grid container className={classes.root} spacing={xl ? 16 : 24}>
+        {items.lenght > 0?<Grid container className={classes.root} spacing={xl ? 16 : 24}>
           {isLoading ? (
             <Loading />
           ) : (
@@ -78,7 +79,7 @@ const GridLayout = props => {
           >
             {items.map(e => ( <div>{children}</div>))}
           </Carousel>)}
-        </Grid>
+        </Grid>:<Typography>Sem resultados</Typography>}
       </Panel>
     </div>
   );

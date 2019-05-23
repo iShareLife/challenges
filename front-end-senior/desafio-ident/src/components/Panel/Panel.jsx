@@ -46,7 +46,7 @@ function Panel(props) {
                 align="left"
                 component="span"
               >
-                {props.title}
+                {props.title} 
               </Typography>
               <Typography
                 className={classes.subtitle}

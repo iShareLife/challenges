@@ -1,56 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { CarouselLancamentos, Implantodontia, Periodontia } from "layouts";
-import { withStyles } from "@material-ui/core/styles";
+import { IDentClient } from "utils";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  control: {
-    padding: theme.spacing.unit * 2
-  },
-  panel: {
-    marginBottom: 40
-  }
-});
 
 function Home(props) {
+  const client = new IDentClient();
   const [lancamentos, setLancamentos] = useState({
     loading: false,
     cursos: 0,
-    items: [1,2,3,4,5,6,7,8]
+    items: []
   });
   const [periodontia, setPeriodontia] = useState({
-    loading: true,
+    loading: false,
     cursos: 0,
     items: []
   });
   const [implantodontia, setImplantodontia] = useState({
     loading: false,
     cursos: 0,
-    items: [1,2,3,4]
+    items: []
   });
 
-  const { classes } = props;
-    return (
-      <React.Fragment>
-        <CarouselLancamentos
-          items={lancamentos.items}
-          isLoading={lancamentos.loading}
-          cursos={lancamentos.cursos}
-        />
-        <Implantodontia
-          items={implantodontia.items}
-          isLoading={implantodontia.loading}
-          cursos={implantodontia.cursos}
-        />
-        <Periodontia
-          items={periodontia.items}
-          isLoading={periodontia.loading}
-          cursos={periodontia.cursos}
-        />
-      </React.Fragment>
-    );
+  useEffect(() => {
+    fetchImplantodontia();
+  }, [])
+
+  async function fetchImplantodontia() {
+    setImplantodontia({items:[],cursos: 0, loading: true});
+    const videosResponse = await client.getVideosImplantodontia();
+    setImplantodontia({ items: parseResponse(videosResponse.items), cursos: videosResponse.items.lenght, loading: false });
+    console.log("Videos Implantodontia: ", videosResponse);
+  };
+
+  function parseResponse(item) {
+    return item.map(e=>{
+      return {
+        imageFile: e.snippet.thumbnails.high
+      }
+    })
+  }
+
+  return (
+    <React.Fragment>
+      <CarouselLancamentos
+        items={lancamentos.items}
+        isLoading={lancamentos.loading}
+        cursos={lancamentos.cursos}
+      />
+      <Implantodontia
+        items={implantodontia.items}
+        isLoading={implantodontia.loading}
+        cursos={implantodontia.cursos}
+      />
+      <Periodontia
+        items={periodontia.items}
+        isLoading={periodontia.loading}
+        cursos={periodontia.cursos}
+      />
+    </React.Fragment>
+  );
 }
 
-export default withStyles(styles)(Home);
+export default Home;

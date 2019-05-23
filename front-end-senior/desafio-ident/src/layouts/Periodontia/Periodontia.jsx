@@ -56,16 +56,16 @@ const GridLayout = props => {
 const Periodontia = props => {
     const { classes, items, isLoading, cursos, imageFile } = props;
     return (
-        <GridLayout
-            title="Lançamentos"
-            subtitle={`${cursos} cursos`}
-            classes={classes}
-            isLoading={isLoading}
-            showLogo={false}
-            items={items}
-        >
-            <PageCard img={imageFile} />
-        </GridLayout>
+      <GridLayout
+        title="Periodontia"
+        subtitle={`${cursos} cursos`}
+        classes={classes}
+        isLoading={isLoading}
+        showLogo={false}
+        items={items}
+      >
+        <PageCard img={imageFile} />
+      </GridLayout>
     );
 };
 
