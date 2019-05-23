@@ -35,18 +35,18 @@ const GridLayout = props => {
   return (
     <div className={classes.panel}>
       <Panel title={title} subtitle={subtitle} showLogo={showLogo}>
-        <Grid container className={classes.root} spacing={xl?16 : 24}>
+        <Grid container className={classes.root} spacing={xl ? 16 : 24}>
           {isLoading ? (
             <Loading />
           ) : (
-              <>
-                {items.map(e => (
-                  <Grid key={e} item xs={12} md={6} lg={3}>
-                    {children}
-                  </Grid>
-                ))}
-              </>
-            )}
+            <>
+              {items.map(e => (
+                <Grid key={e} item xs={12} md={6} lg={3}>
+                  <PageCard img={e.imageFile} />
+                </Grid>
+              ))}
+            </>
+          )}
         </Grid>
       </Panel>
     </div>
@@ -63,9 +63,7 @@ const Implantodontia = props => {
       isLoading={isLoading}
       showLogo={false}
       items={items}
-    >
-      <PageCard img={imageFile} />
-    </GridLayout>
+    />
   );
 };
 
